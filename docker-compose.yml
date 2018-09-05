@@ -1,0 +1,19 @@
+version: '2'
+
+services:
+  mysql: 
+    image: development-mysql:latest
+    container_name: mysql-db
+    ports:
+      - 3306:3306
+    environment:
+      MYSQL_ROOT_PASSWORD: "s3cr3t"
+    tty: true
+  railes:
+    image: development-ruby:latest
+    container_name: ruby_on_railes
+    ports:
+      - 3000:3000
+    links:
+      - mysql
+    tty: true
