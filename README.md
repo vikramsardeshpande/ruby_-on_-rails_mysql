@@ -1,1 +1,1 @@
-# ruby_-on_-rails_mysql
+# ruby_on_rails_mysql
