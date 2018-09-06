@@ -1,0 +1,22 @@
+<% if @projects.blank? %>
+  <p>There are no projects currently in the system.</p>
+<% else %>
+  <p>These are the current projects in our system</p>
+  <div>
+      <table id="t01">
+          <tr>
+              <th>Project</th>
+              <th> Edit</th>
+              <th>Delete</th>
+          </tr>
+          <% @projects.each do |c| %>
+            <tr>
+                <td><%= link_to c.title, {:action => 'show', :id => c.id} -%></td>
+                <td><b><%= link_to 'Edit', {:action => 'edit', :id => c.id}, {:class => 'btn'} %></b></td>
+                <td><b><%= link_to "Delete", {:action => 'delete', :id => c.id}, {:class => 'btn'} %></b></td>
+            </tr>
+          <% end %>
+      </table>              
+  </div>
+<% end %><hr />
+<%= link_to "New Project", {:action => 'new' }, {:class => 'btn btn-xm btn-primary'}%>

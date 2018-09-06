@@ -1,0 +1,22 @@
+<h1>Add new Project</h1>
+<%= form_tag :action => 'create' do %>
+  <div class="form-group">
+      <p><label for = "project_title">Title</label>:
+
+          <%= text_field 'projects', 'title' %></p>
+  </div>
+  <div class="form-group">
+      <p><label for = "project_teamlead_id">LeamLead</label>:
+
+          <%= collection_select(:projects, :teamlead_id, @teamleads, :id, :name, prompt: true) %></p>
+  </div>
+  <div class="form-group">
+      <label for = "project_description">Description</label>:
+
+      <%= text_area 'projects', 'description' %>
+  </div>
+  <hr />
+  <%= submit_tag "Create", {:class => 'btn btn-xm btn-primary'} %>
+  <%= link_to 'Back', {:action => 'list'}, {:class => 'btn btn-xm btn-primary'} %>
+<% end -%>
+Ï

@@ -1,0 +1,13 @@
+<h1><%= @project.title %></h1>
+
+<p>
+   <strong>TeamLead :</strong> <%= link_to @project.teamlead.name, :action => "show_teamleads", :id => @project.teamlead.id %><br />
+   <strong>Description:</strong><%= @project.description %><br />
+   <strong>Visit counter:</strong> <%= @project.count_view %><br />
+   <strong>Created Date:</strong> <%= @project.created_at %><br />
+</p>
+
+
+<hr />
+
+<%= link_to 'Back', {:action => 'list'}, {:class => 'btn btn-xm btn-primary'} %>
