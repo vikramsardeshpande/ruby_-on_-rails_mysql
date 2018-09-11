@@ -2,7 +2,7 @@ FROM docker.io/rails
 
 RUN apt-get update -y 
 RUN mkdir /app
-ADD ./project_management_demo /app/project_management_demo
+ADD ./ruby_on_rails/project_management_demo /app/project_management_demo
 WORKDIR /app/project_management_demo
 ENV DATABASE_HOST=mysql
 ENV DATABASE_USERNAME=root
